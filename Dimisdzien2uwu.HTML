@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Valentine's Day Proposal</title>
+  <style>
+    body {
+      background-color: pink;
+      text-align: center;
+    }
+    #content {
+      margin-top: 50px;
+    }
+    #valentineImage {
+      width: 300px;
+      border-radius: 15px;
+    }
+    #question {
+      font-size: 24px;
+      margin-top: 20px;
+    }
+    #answer-buttons {
+      margin-top: 20px;
+    }
+    #response {
+      margin-top: 20px;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div id="content">
+    <img id="valentineImage" src="https://i.pinimg.com/564x/ee/72/56/ee7256774725a950d23d67976391de66.jpg" alt="Sweet Kitty">
+    <h2 id="question">Hey cutie, will you be my Valentine?</h2>
+    <div id="answer-buttons">
+      <button onclick="showResponse('yes')">Yes</button>
+      <button onclick="showResponse('no')">No</button>
+    </div>
+    <div id="response">
+      <!-- Response content will be added dynamically -->
+    </div>
+  </div>
+
+  <script>
+    function showResponse(answer) {
+      document.getElementById('answer-buttons').style.display = 'none';
+      document.getElementById('question').style.display = 'none';
+      document.getElementById('valentineImage').style.display = 'none';
+      document.getElementById('response').style.display = 'block';
+
+      if (answer === 'yes') {
+        document.getElementById('response').innerHTML = '<img src="https://i.pinimg.com/564x/20/d4/a6/20d4a623f23c3f28e1f8a8730ebbf416.jpg" alt="Another Sweet Kitty" width="300"><p>I love you, see you on February 14th!</p>';
+      } else if (answer === 'no') {
+        document.getElementById('response').innerHTML = '<img src="https://i.pinimg.com/564x/0a/72/1f/0a721f60b2f74ac225867159c7e28975.jpg" alt="Another Sweet Kitty" width="300"><p>This button doesn\'t work. You can\'t escape from me.</p>';
+      }
+    }
+  </script>
+</body>
+</html>
